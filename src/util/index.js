@@ -8,6 +8,7 @@ const isCommandline = (userAgent) => {
 const getStream = (req, res) => {
   const stream = new Readable();
   stream.pipe(res);
+  // eslint-disable-next-line no-underscore-dangle
   stream._read = () => {};
   req.on('close', () => {
     stream.destroy();
