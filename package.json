@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx functions-framework --target=byeanyfin --signature-type=http",
-    "deploy": "gcloud functions deploy byeanyfin --runtime nodejs16 --trigger-http --allow-unauthenticated --project a7ul-356611 --region europe-west1"
+    "deploy": "gcloud functions deploy byeanyfin --gen2 --runtime nodejs18 --trigger-http --allow-unauthenticated --project a7ul-356611 --region europe-west1"
   },
   "license": "ISC",
   "dependencies": {
