@@ -36,11 +36,15 @@ body {
   padding-top:10px;
   font-weight: bold;
   font-size: 16px;
+  background-color: black;
+  color: white;
+  margin: 0 auto;
 }
 
 
 .help-text {
   padding: 20px 0;
-  font-weight: bold;
+  font-weight: thin;
+  font-style: italic;
   font-size: 16px;
 }

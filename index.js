@@ -23,12 +23,12 @@ app.use('*', (req, res) => {
   const userAgent = req.headers['user-agent'];
   if (util.isCommandline(userAgent)) {
     return res.send(`
-    Hit: curl http://byemck.atulr.com/
+    Hit: curl http://byeanyfin.atulr.com/
 
     You are trying to hit an invalid route!
     \n`);
   }
-  res.redirect('/');
+  return res.redirect('/');
 });
 
 app.listen(PORT, () => console.log(`bye bye app listening on port ${PORT}!`));

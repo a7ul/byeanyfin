@@ -1,6 +1,6 @@
-# byemck
+# byeanyfin
 
-A fun goodbye console web service made in Javascript.
+A fun bye console web service made in Javascript.
 
 Blog post: https://medium.com/@atulanand94/building-web-based-uis-for-terminals-using-javascript-60b5eee31213
 
@@ -8,7 +8,7 @@ Blog post: https://medium.com/@atulanand94/building-web-based-uis-for-terminals-
 
 It is hosted on GCP via cloud functions here:
 
-http://byemck.atulr.com/
+http://byeanyfin.atulr.com/
 
 # To run locally:
 

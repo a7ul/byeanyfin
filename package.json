@@ -1,18 +1,17 @@
 {
-  "name": "byemck",
+  "name": "byeanyfin",
   "version": "1.0.0",
   "description": "A fun farewell console web service",
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon index.js",
-    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "ISC",
   "dependencies": {
     "ansi-styles": "^6.2.1",
-    "express": "^4.18.2",
-    "pm2": "^5.2.2"
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "eslint": "^8.33.0",
@@ -22,11 +21,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/a7ul/byemck.git"
+    "url": "git+https://github.com/a7ul/byeanyfin.git"
   },
   "bugs": {
-    "url": "https://github.com/a7ul/byemck/issues"
+    "url": "https://github.com/a7ul/byeanyfin/issues"
   },
-  "homepage": "https://github.com/a7ul/byemck#readme",
+  "homepage": "https://github.com/a7ul/byeanyfin#readme",
   "author": "atulanand94@gmail.com"
 }
