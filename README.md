@@ -8,7 +8,7 @@ Blog post: https://medium.com/@atulanand94/building-web-based-uis-for-terminals-
 
 It is hosted on GCP via cloud functions here:
 
-http://byeanyfin.atulr.com/
+https://byeanyfin.atulr.com/
 
 # To run locally:
 
