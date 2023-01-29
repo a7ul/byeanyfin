@@ -71,7 +71,6 @@ atulanand94@gmail.com
 https://www.linkedin.com/in/atulanand94/
 +46704856783
 
-
 If you are curious about Magic refunds 🪄
 https://twitter.com/magicrefunds
 https://www.magicrefunds.com

@@ -27,3 +27,7 @@ After that open another terminal and do:
 or
 
 `wget -q -O - http://localhost:3000/`
+
+# To deploy
+
+- `npm run deploy`
