@@ -17,7 +17,6 @@ ${text1}
 \\(●‿●)/  ${text3}
  (   )   ${text4} 
          ${text5} 
-
 `,
   next: (text1 = "", text2 = "", text3 = "", text4 = "") => `
 ${text1}
@@ -47,10 +46,9 @@ ${text1}
   proud: (text1 = "", text2 = "", text3 = "", text4 = "") => `
 ${text1}
 
-     ^^^     
-   \\(^‿^)/  ${text2}
-    (   )   ${text3}
-            ${text4}  
+     ^^^    ${text2}
+   \\(★‿★)/  ${text3}
+    (   )   ${text4}  
 
 `,
   smile: (text1 = "", text2 = "", text3 = "") => `
@@ -77,31 +75,34 @@ ${text1}
   bowDown: (text1 = "", text2 = "", text3 = "") => `
   ${text1}
              
-     ^^^      ${text2}
-   m(●‿●)m   
-              ${text3}
+              ${text2}
+     ^^^      
+   m(●‿●)m    ${text3}
+              
 `,
   bow: (text1 = "", text2 = "", text3 = "") => `
   ${text1}
-     ^^^     
-   \\(●‿●)/    ${text2}
-    (   )   
-              ${text3}
+
+     ^^^      ${text2}
+   \\(●‿●)/    
+    (   )     ${text3}
+              
 `,
-  anyfin: (text1 = "", text2 = "") => `
-          ${text1}    
+  anyfin: (text1 = "", text2 = "", text3 = "") => `
+              ${text1}    
   ${text2}
+         ${text3}
        
-             /####\\              
-           /########\\              
-          /###########\\             
-          \\###########/            
-      /##\\ \\########/             
-    /######\\ \\####/________       
-  /##########\\   |#########|       
-  \\###########/  |#########|       
-    \\#######/    |#########|       
-      \\###/      |#########|       
+            /####\\              
+          /########\\              
+        /###########\\             
+        \\###########/            
+    /##\\ \\########/             
+  /######\\ \\####/________       
+/##########\\   |#########|       
+\\###########/  |#########|       
+  \\#######/    |#########|       
+    \\###/      |#########|       
                                                                                      
 `,
 };
@@ -111,12 +112,12 @@ const animHi = async (stream) => {
   for (let i = 0; i < 5; i += 1) {
     stream.push(symbols.PAGE_BREAK);
     stream.push(
-      frames.anyfin("Hej 👋", "Today is my last day here ☹️  (potentially)")
+      frames.anyfin("Hej 👋", "Today is my last day here ☹️", "(potentially)")
     );
     await delay(600);
     stream.push(symbols.PAGE_BREAK);
     stream.push(
-      frames.anyfin("Hej 🫲", "Today is my last day here ☹️  (potentially)")
+      frames.anyfin("Hej 🫲", "Today is my last day here ☹️", "(potentially)")
     );
     await delay(600);
   }
@@ -124,7 +125,7 @@ const animHi = async (stream) => {
   const messages = [
     "I am taking a six month leave to build a startup",
     "(Worst time 🤷‍♂️, I know 🤣)",
-    "I wanted to take a moment to thank you and convey my deepest gratitude ❤️ ...",
+    "I will take a moment and convey my deepest gratitude ❤️ ...",
   ];
   for (let i = 0; i < 5; i += 1) {
     stream.push(symbols.PAGE_BREAK);
@@ -149,9 +150,10 @@ const beginning = async (stream) => {
   }
   await delay(500);
   const messages = [
-    "I met Sven, Husse and Filip",
-    "Instantly knew that I wanted to work here",
-    "The passion, honesty and kindness was contagious. I was sold ✅",
+    "I met Sven, Husse and Filip 🌟",
+    "Instantly! I wanted to work here",
+    `The passion and honesty was contagious. 
+             I was sold ✅`,
   ];
   for (let i = 0; i < 3; i += 1) {
     stream.push(symbols.PAGE_BREAK);
@@ -163,15 +165,15 @@ const beginning = async (stream) => {
     stream.push(frames.smile(...lines));
     await delay(2000);
   }
-  await delay(1500);
+  await delay(3000);
 };
 
 const grateful = async (stream) => {
   stream.push(symbols.PAGE_BREAK);
   const messages = [
-    "Last four years, I am grateful for",
-    "all the blind trust and opportunities",
-    "I was given ❤️",
+    "Last four years...",
+    "I am grateful for all the blind trust",
+    "and opportunities I was given ❤️",
   ];
   for (let i = 0; i < 5; i += 1) {
     stream.push(symbols.PAGE_BREAK);
@@ -190,12 +192,13 @@ const proudof = async (stream) => {
   stream.push(symbols.PAGE_BREAK);
   const messages = [
     "Things I am proud of",
-    "- The amazing engineering team we have",
-    "- The modern tech stack we built",
-    `- Going from : 
+    "💪 The amazing engineering team we have",
+    "🚀 The modern tech stack we built",
+    `🤯 Going from:
+
     "I work at a fintech Anyfin. It's a startup in..." 
-                       ⬇️ 
-    "I work at Anyfin" and people recognising 🤯`,
+                       to 
+    "I work at Anyfin" and people recognising!`,
   ];
   for (let i = 0; i < 4; i += 1) {
     stream.push(symbols.PAGE_BREAK);
@@ -206,7 +209,7 @@ const proudof = async (stream) => {
     stream.push(frames.proud(...lines));
     await delay(2000);
   }
-  await delay(2000);
+  await delay(6000);
 };
 
 const miss = async (stream) => {
@@ -227,7 +230,7 @@ const miss = async (stream) => {
     stream.push(frames.miss(...lines));
     await delay(2000);
   }
-  await delay(2000);
+  await delay(4000);
 };
 
 const learning = async (stream) => {
@@ -247,7 +250,7 @@ const learning = async (stream) => {
     stream.push(frames.learn(...lines));
     await delay(2000);
   }
-  await delay(2000);
+  await delay(6000);
 };
 
 const whatNext = async (stream) => {
@@ -267,7 +270,7 @@ const whatNext = async (stream) => {
     stream.push(frames.next(...lines));
     await delay(2000);
   }
-  await delay(2000);
+  await delay(4000);
 };
 
 const contacts = async (stream) => {
@@ -280,7 +283,7 @@ const contacts = async (stream) => {
     `
 ------------------------
 
-atulanand94@gmail.com
+Atul - atulanand94@gmail.com
 https://www.linkedin.com/in/atulanand94/
 +46704856783
 
