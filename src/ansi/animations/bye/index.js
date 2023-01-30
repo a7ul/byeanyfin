@@ -10,13 +10,30 @@ const frames = {
   simple: (text = "") => `
              ${text}
 `,
-  dab: (text1 = "", text2 = "", text3 = "", text4 = "") => `
+  reachout: (text1 = "", text2 = "", text3 = "", text4 = "", text5 = "") => `
 ${text1}
 
-     ^^^     
-  \\(●‿\\)  ${text2}
-    (   )   ${text3}
-            ${text4}  
+  ^^^    ${text2} 
+\\(●‿●)/  ${text3}
+ (   )   ${text4} 
+         ${text5} 
+
+`,
+  next: (text1 = "", text2 = "", text3 = "", text4 = "") => `
+${text1}
+
+   ^^^     ${text2} 
+? (●‿●) ?  ${text3}
+? (> <) ?  ${text4}  
+
+`,
+  learn: (text1 = "", text2 = "", text3 = "", text4 = "") => `
+${text1}
+
+     🎓     
+    (■‿■)  ${text2}
+    /> <\\  ${text3}
+           ${text4}  
 
 `,
   miss: (text1 = "", text2 = "", text3 = "", text4 = "") => `
@@ -24,9 +41,8 @@ ${text1}
 
      ^^^    ${text2}
     (●_●,)  ${text3}
-    (/  \\)  ${text4} 
+    (>  <)  ${text4} 
              
-
 `,
   proud: (text1 = "", text2 = "", text3 = "", text4 = "") => `
 ${text1}
@@ -88,15 +104,6 @@ ${text1}
       \\###/      |#########|       
                                                                                      
 `,
-
-  exanyfin: (text1 = "", text2 = "", text3 = "", h = "", h2 = "") => `
-${h}
-
-   ^^^        ${h2}
-  (■‿■)       ${text1}
-  (> <)       ${text2}
-              ${text3}
- `,
 };
 
 const animHi = async (stream) => {
@@ -227,9 +234,9 @@ const learning = async (stream) => {
   stream.push(symbols.PAGE_BREAK);
   const messages = [
     "Things I learnt here",
-    "Be action oriented - Get stuff out always",
-    "Everyone sees the problem - Find solutions not the problem",
-    `Drive the change - You have more influence than you think`,
+    "🚀 Be action oriented - Get stuff out always",
+    "🤌  Everyone sees the problem - Find solutions not problems",
+    `🏎️  Drive the change - You have more influence than you think`,
   ];
   for (let i = 0; i < 4; i += 1) {
     stream.push(symbols.PAGE_BREAK);
@@ -237,25 +244,74 @@ const learning = async (stream) => {
     for (let m = 0; m <= i; m += 1) {
       lines.push(messages[m]);
     }
-    stream.push(frames.miss(...lines));
+    stream.push(frames.learn(...lines));
     await delay(2000);
   }
   await delay(2000);
 };
 
-const whatNext = async (stream) => {};
+const whatNext = async (stream) => {
+  stream.push(symbols.PAGE_BREAK);
+  const messages = [
+    "What next?",
+    "I am taking a huge leap of faith 🤞",
+    "and building Magic (https://magicrefunds.com) 🪄",
+    `But, I have a warm home ❤️  to come back if things go ⬇️`,
+  ];
+  for (let i = 0; i < 4; i += 1) {
+    stream.push(symbols.PAGE_BREAK);
+    const lines = [];
+    for (let m = 0; m <= i; m += 1) {
+      lines.push(messages[m]);
+    }
+    stream.push(frames.next(...lines));
+    await delay(2000);
+  }
+  await delay(2000);
+};
 
-const contacts = async (stream) => {};
+const contacts = async (stream) => {
+  stream.push(symbols.PAGE_BREAK);
+  const messages = [
+    "Ping me any day",
+    "Still in Stockholm - up for fikas, aws, sports...",
+    "(Invite me, please 😬)",
+    `Anyfin is ❤️. I will always be cheering for you all`,
+    `
+------------------------
+
+atulanand94@gmail.com
+https://www.linkedin.com/in/atulanand94/
++46704856783
+
+If you are curious about Magic 🪄
+https://twitter.com/magicrefunds
+https://www.magicrefunds.com
+
+------------------------
+`,
+  ];
+  for (let i = 0; i < 5; i += 1) {
+    stream.push(symbols.PAGE_BREAK);
+    const lines = [];
+    for (let m = 0; m <= i; m += 1) {
+      lines.push(messages[m]);
+    }
+    stream.push(frames.reachout(...lines));
+    await delay(2000);
+  }
+  await delay(2000);
+};
 
 module.exports = async (stream) => {
-  // await animHi(stream);
-  // await beginning(stream);
-  // await grateful(stream);
-  // await proudof(stream);
-  // await miss(stream);
+  await animHi(stream);
+  await beginning(stream);
+  await grateful(stream);
+  await proudof(stream);
+  await miss(stream);
   await learning(stream);
   await whatNext(stream);
   await contacts(stream);
-  stream.push("\\n");
+  stream.push("\n");
   stream.push(null);
 };
