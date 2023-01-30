@@ -10,6 +10,33 @@ const frames = {
   simple: (text = "") => `
              ${text}
 `,
+  dab: (text1 = "", text2 = "", text3 = "", text4 = "") => `
+${text1}
+
+     ^^^     
+  \\(●‿\\)  ${text2}
+    (   )   ${text3}
+            ${text4}  
+
+`,
+  miss: (text1 = "", text2 = "", text3 = "", text4 = "") => `
+${text1}
+
+     ^^^    ${text2}
+    (●_●,)  ${text3}
+    (/  \\)  ${text4} 
+             
+
+`,
+  proud: (text1 = "", text2 = "", text3 = "", text4 = "") => `
+${text1}
+
+     ^^^     
+   \\(^‿^)/  ${text2}
+    (   )   ${text3}
+            ${text4}  
+
+`,
   smile: (text1 = "", text2 = "", text3 = "") => `
              ${text1}
      ^^^     
@@ -17,22 +44,36 @@ const frames = {
     (> <)    
              ${text3}
  `,
-  lastDay: (text1 = "", text2 = "", text3 = "") => `
+  pointRight: (text1 = "", text2 = "", text3 = "") => `
              ${text1}
      ^^^     
     (●_●)    ${text2}
     (>  )>   
              ${text3}
 `,
-  lastDayCloseEye: (text1 = "", text2 = "", text3 = "") => `
+  pointRightCloseEye: (text1 = "", text2 = "", text3 = "") => `
              ${text1}
      ^^^     
     ( _ )    ${text2}
     (>  )>   
              ${text3}
 `,
+  bowDown: (text1 = "", text2 = "", text3 = "") => `
+  ${text1}
+             
+     ^^^      ${text2}
+   m(●‿●)m   
+              ${text3}
+`,
+  bow: (text1 = "", text2 = "", text3 = "") => `
+  ${text1}
+     ^^^     
+   \\(●‿●)/    ${text2}
+    (   )   
+              ${text3}
+`,
   anyfin: (text1 = "", text2 = "") => `
-            ${text1}    
+          ${text1}    
   ${text2}
        
              /####\\              
@@ -80,14 +121,14 @@ const animHi = async (stream) => {
   ];
   for (let i = 0; i < 5; i += 1) {
     stream.push(symbols.PAGE_BREAK);
-    stream.push(frames.lastDay(...messages));
+    stream.push(frames.pointRight(...messages));
     await delay(800);
     stream.push(symbols.PAGE_BREAK);
-    stream.push(frames.lastDayCloseEye(...messages));
+    stream.push(frames.pointRightCloseEye(...messages));
     await delay(800);
   }
   stream.push(symbols.PAGE_BREAK);
-  stream.push(frames.lastDay(...messages));
+  stream.push(frames.pointRight(...messages));
   await delay(1000);
 };
 
@@ -118,9 +159,103 @@ const beginning = async (stream) => {
   await delay(1500);
 };
 
+const grateful = async (stream) => {
+  stream.push(symbols.PAGE_BREAK);
+  const messages = [
+    "Last four years, I am grateful for",
+    "all the blind trust and opportunities",
+    "I was given ❤️",
+  ];
+  for (let i = 0; i < 5; i += 1) {
+    stream.push(symbols.PAGE_BREAK);
+    stream.push(frames.bow(...messages));
+    await delay(800);
+    stream.push(symbols.PAGE_BREAK);
+    stream.push(frames.bowDown(...messages));
+    await delay(800);
+  }
+  stream.push(symbols.PAGE_BREAK);
+  stream.push(frames.bow(...messages));
+  await delay(1000);
+};
+
+const proudof = async (stream) => {
+  stream.push(symbols.PAGE_BREAK);
+  const messages = [
+    "Things I am proud of",
+    "- The amazing engineering team we have",
+    "- The modern tech stack we built",
+    `- Going from : 
+    "I work at a fintech Anyfin. It's a startup in..." 
+                       ⬇️ 
+    "I work at Anyfin" and people recognising 🤯`,
+  ];
+  for (let i = 0; i < 4; i += 1) {
+    stream.push(symbols.PAGE_BREAK);
+    const lines = [];
+    for (let m = 0; m <= i; m += 1) {
+      lines.push(messages[m]);
+    }
+    stream.push(frames.proud(...lines));
+    await delay(2000);
+  }
+  await delay(2000);
+};
+
+const miss = async (stream) => {
+  stream.push(symbols.PAGE_BREAK);
+  const messages = [
+    "Things I will miss",
+    "My people ❤️",
+    "I am grateful to have worked with",
+    `some of the kindest 🌟 brightest minds
+            I am lucky to call them my friends`,
+  ];
+  for (let i = 0; i < 4; i += 1) {
+    stream.push(symbols.PAGE_BREAK);
+    const lines = [];
+    for (let m = 0; m <= i; m += 1) {
+      lines.push(messages[m]);
+    }
+    stream.push(frames.miss(...lines));
+    await delay(2000);
+  }
+  await delay(2000);
+};
+
+const learning = async (stream) => {
+  stream.push(symbols.PAGE_BREAK);
+  const messages = [
+    "Things I learnt here",
+    "Be action oriented - Get stuff out always",
+    "Everyone sees the problem - Find solutions not the problem",
+    `Drive the change - You have more influence than you think`,
+  ];
+  for (let i = 0; i < 4; i += 1) {
+    stream.push(symbols.PAGE_BREAK);
+    const lines = [];
+    for (let m = 0; m <= i; m += 1) {
+      lines.push(messages[m]);
+    }
+    stream.push(frames.miss(...lines));
+    await delay(2000);
+  }
+  await delay(2000);
+};
+
+const whatNext = async (stream) => {};
+
+const contacts = async (stream) => {};
+
 module.exports = async (stream) => {
-  await animHi(stream);
-  await beginning(stream);
+  // await animHi(stream);
+  // await beginning(stream);
+  // await grateful(stream);
+  // await proudof(stream);
+  // await miss(stream);
+  await learning(stream);
+  await whatNext(stream);
+  await contacts(stream);
   stream.push("\\n");
   stream.push(null);
 };
