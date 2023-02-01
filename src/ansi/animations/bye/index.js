@@ -288,7 +288,7 @@ https://www.linkedin.com/in/atulanand94/
 +46704856783
 
 If you are curious about Magic 🪄
-https://twitter.com/magicrefunds
+https://twitter.com/magicwasused
 https://www.magicrefunds.com
 
 ------------------------
